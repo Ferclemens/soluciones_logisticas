@@ -20,3 +20,16 @@ class Noticia(models.Model):
 	class Meta:
 		verbose_name =("Noticia")
 		verbose_name_plural =("Noticia")
+
+class Comentario(models.Model):
+	noticia = models.ForeignKey(Noticia, on_delete= models.CASCADE)
+	contenido = models.TextField()
+	autor = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+	fecha_hora = models.DateTimeField(default=timezone.now)
+
+	def __str__(self):
+		return self.contenido
+
+	class Meta:
+		verbose_name = ("Comentario")
+		verbose_name_plural= ("Comentarios")
