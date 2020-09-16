@@ -1,9 +1,15 @@
 from django import forms
+from crispy_forms.helper import FormHelper
+from crispy_forms.layout import Submit
+from .models import Noticia
 
-class NoticiaForm(forms.Form):
-    titulo = forms.CharField()
-    contenido = forms.CharField(widget=forms.Textarea)
+class NoticiaForm(forms.ModelForm):
+	class Meta:
+		model= Noticia
+		fields = ('autor', 'titulo', 'contenido')
 
-    def send_email(self):
-        # send email using the self.cleaned_data dictionary
-        pass
+	def __init__(self, *args, **kwargs):
+		super().__init__(*args, **kwargs)
+		self.helper = FormHelper()
+
+

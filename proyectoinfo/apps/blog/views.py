@@ -1,8 +1,10 @@
 from django.shortcuts import render
+from django.urls import reverse_lazy
 from .models import Noticia
+from .forms import NoticiaForm
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 
 # Create your views here.
 
@@ -27,6 +29,16 @@ class CrearNoticia(CreateView):
 	model=Noticia
 	success_url='/lista'
 	fields= ['autor', 'titulo','contenido']
+
+class UpdateNoticia(UpdateView):
+	model = Noticia
+	form_class = NoticiaForm
+	template_name = 'blog/blog_update_form.html'
+	success_url='/lista'
+
+class DeleteNoticia(DeleteView):
+	model = Noticia
+	success_url = reverse_lazy('lista')
 
 
 
