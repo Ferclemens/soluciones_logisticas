@@ -5,10 +5,13 @@ from .forms import NoticiaForm
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
-class Listar(ListView):
+
+class Listar(LoginRequiredMixin, ListView):
+	login_url = 'login'
 	model=Noticia
 	template_name = "listar_noticias.html"
 	context_object_name = "noticias"
@@ -16,7 +19,7 @@ class Listar(ListView):
 		noticias = Noticia.objects.all().order_by('-fecha_creacion')
 		return noticias
 
-
+@login_required(login_url='login')
 def home(request):
 	return render(request, 'home.html', {})
 

@@ -15,7 +15,11 @@
 				          <p class="card-text mb-auto">{{ noticia.contenido}}</p>
 				          <div class="row">
 				          	<a href="{% url 'detalle' noticia.id %}" class="col stretched-link">Ver mas</a>
-				          	<a href="{% url 'update' noticia.id %}" class=" col stretched-link">Modificar</a>
+				          	
+				          	{% if user.is_authenticated %}
+				          		<a href="{% url 'update' noticia.id %}" class=" col stretched-link">Modificar</a>
+							{% endif %}
+				          	
 				          </div>
 				          
 				        </div> 

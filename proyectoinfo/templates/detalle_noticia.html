@@ -6,10 +6,12 @@
 	<h1>{{ object.fecha_creacion }}</h1>
 	<h1>{{ object.contenido }}</h1>
 
-
-		<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
-	  		Eliminar
-		</button>
+		{% if user.is_authenticated %}
+				          		<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+						  		Eliminar
+							</button>
+	{% endif %}
+		
 	
 
 	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

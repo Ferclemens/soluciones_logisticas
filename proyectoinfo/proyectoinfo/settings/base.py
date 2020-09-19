@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.blog',
+    'apps.user',
     'crispy_forms'
 ]
 
@@ -122,3 +123,9 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = (os.path.join(os.path.dirname(BASE_DIR),'media'),)
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+from django.urls import reverse_lazy
+
+AUTH_USER_MODEL='user.Usuario'
+LOGIN_URL = reverse_lazy('login')
+LOGIN_REDIRECT_URL = reverse_lazy('lista')

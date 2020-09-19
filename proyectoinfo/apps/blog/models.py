@@ -1,10 +1,11 @@
 from django.db import models
 from django.utils import timezone
 # Create your models here.
+from apps.user.models import Usuario
 
 class Noticia(models.Model):
 
-	autor = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+	autor = models.ForeignKey(Usuario, on_delete=models.CASCADE)
 	titulo = models.CharField(max_length=200)
 	contenido = models.TextField()
 	fecha_creacion = models.DateTimeField(default=timezone.now)
@@ -24,7 +25,7 @@ class Noticia(models.Model):
 class Comentario(models.Model):
 	noticia = models.ForeignKey(Noticia, on_delete= models.CASCADE)
 	contenido = models.TextField()
-	autor = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+	autor = models.ForeignKey(Usuario, on_delete=models.CASCADE)
 	fecha_hora = models.DateTimeField(default=timezone.now)
 
 	def __str__(self):
