@@ -1,5 +1,157 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block content %}
-	<h1>HOME</h1>
-{% endblock %}	
+  <main role="main">
+<!-- CAROUSEL DE IMAGENES -->
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+          <img class="img-fluid" src="{% static 'img/1932-2.jpg' %}" alt="Responsive image">
+          <div class="container">
+            <div class="carousel-caption text-left">
+              <h1>Buscas transporte para tus productos?.</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+          <img class="d-block w-100" src="{% static 'img/img rutas.jpg' %}" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption">
+              <h1>Dispones de transporte y tiempo ocioso?</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img"><rect width="100%" height="100%" fill="#777"/></svg>
+          <img class="d-block w-100" src="{% static 'img/img mercaderia.jpg' %}" alt="Third slide">
+          <div class="container">
+            <div class="carousel-caption text-right">
+              <h1>Tenemos la solución!.</h1>
+              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+    <div class="container marketing">
+
+<!-- VENTAJAS -->
+      <hr class="featurette-divider bg-info">
+      <h1 class= "featurette-heading text-center my-0">Ventajas</h1>
+      <hr class="featurette-divider bg-info">
+      <div class="row mt-5">
+        <div class="col-lg-4">
+          <img class="rounded" src="{% static 'img/oportunidad.png' %}" alt="Generic placeholder image" width="180" height="140">
+          <h2>Oportunidades</h2>
+          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+        </div>
+        <div class="col-lg-4">
+          <img class="rounded" src="{% static 'img/rapidez.png' %}" alt="Generic placeholder image" width="180" height="140">
+          <h2>Rapidez</h2>
+          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+        </div>
+        <div class="col-lg-4">
+          <img class="rounded" src="{% static 'img/Transparencia.png' %}" alt="Generic placeholder image" width="140" height="140">
+          <h2>Transparencia</h2>
+          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+        </div>
+      </div>
+
+
+<!-- COMO FUNCIONA -->
+
+      <hr class="featurette-divider bg-success">
+      <h1 class= "featurette-heading text-center my-0">Como Funciona?</h1>
+      <hr class="featurette-divider bg-success">
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="rounded">Registro</h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+        <div align= "center" class="col-md-5 ">
+          <img class="rounded" src="{% static 'img/registro.png' %}" alt="Generic placeholder image" width="140" height="140">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7 order-md-2">
+          <h2 class="rounded">Busqueda</h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+        <div align= "center" class="col-md-5 ">
+          <img class="rounded" src="{% static 'img/mundo.png' %}" alt="Generic placeholder image" width="140" height="140">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <h2 class="rounded">Contacto</h2>
+          <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo.</p>
+        </div>
+        <div align= "center" class="col-md-5" >
+          <img class="rounded mx-auto" src="{% static 'img/social.png' %}" alt="Generic placeholder image" width="140" height="140">
+        </div>
+      </div>
+
+      <hr class="featurette-divider">
+{% endblock %}
+  <!-- FOOTER  -->
+      <footer class="mastfoot mt-auto p-3 mb-2 shadow bg-secondary">
+        <h3 class= "text-center mx-auto text-light">Alguna duda? Contactenos</h3>
+        <hr>
+        <div class="row text-center">
+          <div class= "col-md-3">
+            <p class= "text-light pt-3">Teléfono: 362 - 4123456 </p>
+          </div>
+          <div class= "col-md-3">
+            <p class= "text-light pt-3">Dirección: Calle Nº 890 </p>
+          </div>
+          <div class= "col-md-3">
+            <p class= "text-light pt-3">Mail: contacto@solucioneslogisticas.com </p>
+          </div>
+          <div class= "col-md-3">
+            <p class= "text-light pt-3">Resistencia, Chaco. </p>
+          </div>
+        </div>
+        <hr class="light">
+        <div class= "row">
+          <div class= "col-md-6 pt-3 pl-5">
+            <p class= "text-left text-dark">© 2020-2021 Soluciones Logísticas, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+          </div>
+          <div class= "col-md-6 pr-5">
+            <p class="float-right btn btn-outline-success"><a href="#">Back to top</a></p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+        <!-- JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+  </body>
+</html>

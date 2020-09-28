@@ -19,7 +19,7 @@ class Listar(LoginRequiredMixin, ListView):
 		noticias = Noticia.objects.all().order_by('-fecha_creacion')
 		return noticias
 
-@login_required(login_url='login')
+#@login_required(login_url='login')
 def home(request):
 	return render(request, 'home.html', {})
 
