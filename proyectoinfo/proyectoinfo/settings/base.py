@@ -124,5 +124,5 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 from django.urls import reverse_lazy
 
 AUTH_USER_MODEL='user.Usuario'
-LOGIN_URL = reverse_lazy('login')
+LOGIN_URL = reverse_lazy('home')
 LOGIN_REDIRECT_URL = reverse_lazy('lista')

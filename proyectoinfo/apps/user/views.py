@@ -8,9 +8,9 @@ from django.views import generic
 class Registro_form(UserCreationForm):
 	class Meta(UserCreationForm.Meta):
 		model = Usuario
-		fields = ('username', 'email', 'password1', 'password2',)
+		fields = ('username', 'email', 'password1', 'password2', "nombre","apellido","dni","fecha_nacimiento","telefono")
 
 class Registro(generic.CreateView):
 	form_class = Registro_form
-	success_url = "home/"
+	success_url = "home"
 	template_name = "Registro.html"
