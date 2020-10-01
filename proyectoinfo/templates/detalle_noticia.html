@@ -1,15 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-
+	<body>
 	<h1>{{ object }}</h1>
-	<h1>{{ object.fecha_creacion }}</h1>
-	<h1>{{ object.contenido }}</h1>
-
+	<h3>{{ object.fecha_creacion }}</h3>
+	<h4>{{ object.contenido }}</h4>
+	</body>
 		{% if user.is_authenticated %}
-				          		<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
-						  		Eliminar
-							</button>
+			<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+			Eliminar
+			</button>
 		{% endif %}
 		
 	
