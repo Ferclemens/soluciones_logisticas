@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.urls import reverse_lazy
-from .models import Noticia
-from .forms import NoticiaForm
+from .models import Noticia, Comentario
+from . import models
+from .forms import NoticiaForm, ComentarioForm
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -27,6 +28,8 @@ def home(request):
 class DetalleNoticia(DetailView):
 	model=Noticia
 	template_name="detalle_noticia.html"
+	context_object_name = "noticias"
+	
 
 class CrearNoticia(CreateView):
 	model=Noticia
@@ -43,8 +46,19 @@ class DeleteNoticia(DeleteView):
 	model = Noticia
 	success_url = reverse_lazy('lista')
 
+class CrearOferta(CreateView):
+	model= Comentario
+	form_class = ComentarioForm
+	success_url='/listar_ofertas'
+	#fields= ['noticia','autor', 'fecha_hora', 'contenido']
 
-
+class ListarOfertas(ListView):
+	model = Comentario
+	template_name = "comentario_form.html"
+	context_object_name = "comentarios"
+	def get_queryset(self):
+		comentarios = Comentario.objects.filter().order_by('-fecha_hora')
+		return comentarios
 
 
 

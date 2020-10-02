@@ -1,0 +1,33 @@
+{% extends 'detalle_noticia.html' %}
+
+
+{% block content %}
+<div class="row mb-2">
+
+		{% if comentarios %}
+
+			{% for comentario in comentarios %}
+			<h3 class="ml-5">{{ comentario.noticia}}</h3>
+				<div class="col-md-12">
+				      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+				        <div class="col p-4 d-flex flex-column position-static">
+				          <h3 class="mb-0">{{ comentario.autor}}</h3>
+				          <div class="mb-1 text-muted">{{ comentario.fecha_hora| date:"D d n Y"}}</div>
+				          <h3 class="mb-0">{{ comentario.contenido}}</h3>
+				          
+				          </div>
+				          
+				        </div> 
+				      </div>
+				    </div>
+			{% endfor %}
+		   
+		{% else %}
+			<div class="alert alert-danger" role="alert">
+			  No hay Ofertas 
+			</div>
+			
+		{% endif %}
+
+</div>
+{% endblock %}

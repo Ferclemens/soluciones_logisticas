@@ -9,8 +9,8 @@
 				<div class="col-md-12">
 				      <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
 				        <div class="col p-4 d-flex flex-column position-static">
-				          <h3 class="mb-0">{{ noticia.titulo}}</h3>
-				          <div class="mb-1 text-muted">{{ noticia.fecha_creacion| date:"D d n Y"}}</div>
+				          <h3 class="mb-3">{{ noticia.titulo}}</h3>
+				          <div class="mb-3 text-muted">{{ noticia.fecha_creacion| date:"D d n Y"}}</div>
 				   
 				          <div class="row">
 				          	<a href="{% url 'detalle' noticia.id %}" class="col stretched-link">Ver mas</a>

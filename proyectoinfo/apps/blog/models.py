@@ -24,9 +24,13 @@ class Noticia(models.Model):
 
 class Comentario(models.Model):
 	noticia = models.ForeignKey(Noticia, on_delete= models.CASCADE)
-	contenido = models.TextField()
+	contenido = models.TextField(max_length=200)
 	autor = models.ForeignKey(Usuario, on_delete=models.CASCADE)
 	fecha_hora = models.DateTimeField(default=timezone.now)
+
+	def publicar(self):
+		self.fecha_hora= timezone.now()
+		self.save()
 
 	def __str__(self):
 		return self.contenido
